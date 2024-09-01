@@ -21,31 +21,18 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class Top3Fragment : Fragment() {
-
-    //private lateinit var recyclerView: RecyclerView
-    //private lateinit var adapter: AdapterTop3
-    //private lateinit var list: ArrayList<PropertyModelItem>
     private lateinit var studios: ArrayList<String>
-    private lateinit var teste: ArrayList<String>
+    private lateinit var list: ArrayList<String>
     private lateinit var listview: ListView
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         val contentView: View = inflater.inflate(R.layout.fragment_top3, container, false)
-        //recyclerView = contentView.findViewById(R.id.recyclerView_top3)
         listview = contentView.findViewById(R.id.listview)
-        teste = arrayListOf()
-
+        list = arrayListOf()
         studios = ArrayList()
-        //list = ArrayList()
-        //val layoutManager = LinearLayoutManager(this.context)
-       // adapter = AdapterTop3(list, this)
-       // recyclerView.layoutManager = layoutManager
-
         val retrofit: Retrofit =
             Retrofit.Builder().baseUrl("https://andrezzab.github.io/API-Filmes/")
                 .addConverterFactory(GsonConverterFactory.create()).build()
@@ -68,22 +55,16 @@ class Top3Fragment : Fragment() {
                             studios.add(myData.studios)
                         }
                     }
-                    studios.groupingBy{ it }
-                        .eachCount()
-                        .toList()
-                        .sortedByDescending{ it.second }
-                        .take(3)
                     for (item in studios.groupingBy{ it }
                         .eachCount()
                         .toList()
                         .sortedByDescending{ it.second }
                         .take(3)){
-                        var a: String = item.first
-                        var b: String = item.second.toString()
-                        teste.add(a+" - "+ b + "wins")
+                        var studio: String = item.first
+                        var qtd: String = item.second.toString()
+                        list.add(studio+" - "+ qtd + "wins")
                     }
-
-                    val adapter2: ArrayAdapter<String> = ArrayAdapter<String>(activity!!, android.R.layout.simple_list_item_1, teste)
+                    val adapter2: ArrayAdapter<String> = ArrayAdapter<String>(activity!!, android.R.layout.simple_list_item_1, list)
                     listview.setAdapter(adapter2)
                 }
             }
@@ -95,4 +76,3 @@ class Top3Fragment : Fragment() {
         return contentView
     }
 }
-

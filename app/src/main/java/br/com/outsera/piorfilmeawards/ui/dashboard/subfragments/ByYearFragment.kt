@@ -1,4 +1,4 @@
-package br.com.outsera.piorfilmeawards.ui.list
+package br.com.outsera.piorfilmeawards.ui.dashboard.subfragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -91,9 +91,9 @@ class ListFragment : Fragment() {
     }
 
     private fun filterList(query: String?) {
-
+        val filteredList = ArrayList<PropertyModelItem>()
         if (query != null) {
-            val filteredList = ArrayList<PropertyModelItem>()
+
             for (i in list) {
                 if (i.year.toString().equals(query)) {
                     filteredList.add(i)
@@ -104,8 +104,6 @@ class ListFragment : Fragment() {
             } else {
                 adapter.setFilteredList(filteredList)
             }
-        } else {
-            adapter.setFilteredList(list)
         }
     }
 }

@@ -4,10 +4,10 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import br.com.outsera.piorfilmeawards.ui.dashboard.subfragments.ByYearFragment
 import br.com.outsera.piorfilmeawards.ui.dashboard.subfragments.IntervalFragment
 import br.com.outsera.piorfilmeawards.ui.dashboard.subfragments.MultipleFragment
-import br.com.outsera.piorfilmeawards.ui.list.ByYearFragment
-import br.com.outsera.piorfilmeawards.ui.list.Top3Fragment
+import br.com.outsera.piorfilmeawards.ui.dashboard.subfragments.Top3Fragment
 
 private const val NUM_TABS = 4
 

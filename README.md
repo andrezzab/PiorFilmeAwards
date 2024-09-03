@@ -17,7 +17,7 @@
 
 # 2. Instalação
 
-- Instale o programa [Android Studio]([url](https://developer.android.com/studio?hl=pt-br&_gl=1*sz1gbq*_up*MQ..&gclid=CjwKCAjwxNW2BhAkEiwA24Cm9Bh_khqwnTH2tZ7AAylxEqtvt1ByRbdEnWz07iAhYglvlZt1nTyMlRoC5D0QAvD_BwE&gclsrc=aw.ds)) no seu computador.
+- Instale o programa [Android Studio](https://developer.android.com/studio?hl=pt-br&_gl=1*sz1gbq*_up*MQ..&gclid=CjwKCAjwxNW2BhAkEiwA24Cm9Bh_khqwnTH2tZ7AAylxEqtvt1ByRbdEnWz07iAhYglvlZt1nTyMlRoC5D0QAvD_BwE&gclsrc=aw.ds) no seu computador.
 
 # 3. Como usar
 ### 3.1 Pré-requisitos
@@ -37,7 +37,7 @@
 - No Android Studio, acesse File -> Settings -> Android SDK e instale a API 34:
 ![image](https://github.com/user-attachments/assets/5f85fa6c-07ab-49ad-a26b-1097ef079247)
 
-- Vá até o menu de gradle e configure com o [gradle 8.1.1]([url](https://gradle.org/next-steps/?version=8.1.1&format=bin)) e o JDK 17. Clique em Apply e OK.
+- Vá até o menu de gradle e configure com o [gradle 8.1.1](https://gradle.org/next-steps/?version=8.1.1&format=bin) e o JDK 17. Clique em Apply e OK.
 ![image](https://github.com/user-attachments/assets/0349babb-9f8a-48d3-8481-785cbbff7af4)
 
 - Vá até o menu de Project Structure e configure:

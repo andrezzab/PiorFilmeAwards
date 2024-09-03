@@ -3,24 +3,24 @@
  
 # Pior Filme Awards
 
-## Descrição: Aplicativo desenvolvido em kotlin para consumo de dados atraves de APi
+ Descrição: Aplicativo desenvolvido em kotlin para consumo de dados atraves de APi
 
-## Status do projeto: Em construção
+ Status do projeto: Em construção
 
-# TABELA DE CONTEÚDO
+## TABELA DE CONTEÚDO
 
-## 1. [Tabela de Conteudo](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#tabela-de-conte%C3%BAdo)
-## 2. [Instalação](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#2-instala%C3%A7%C3%A3o-1)
-## 3. [Como usar](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#3-como-usar-1)
-   ## 3.1. [Pre-requisitos](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#31-pr%C3%A9-requisitos)
-## 4. [Tecnologias](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#4-tecnologias-1)
+ 1. [Tabela de Conteudo](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#tabela-de-conte%C3%BAdo)
+ 2. [Instalação](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#2-instala%C3%A7%C3%A3o-1)
+ 3. [Como usar](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#3-como-usar-1)
+    3.1. [Pre-requisitos](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#31-pr%C3%A9-requisitos)
+ 4. [Tecnologias](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#4-tecnologias-1)
 
 # 2. Instalação
 
 - Instale o programa [Android Studio]([url](https://developer.android.com/studio?hl=pt-br&_gl=1*sz1gbq*_up*MQ..&gclid=CjwKCAjwxNW2BhAkEiwA24Cm9Bh_khqwnTH2tZ7AAylxEqtvt1ByRbdEnWz07iAhYglvlZt1nTyMlRoC5D0QAvD_BwE&gclsrc=aw.ds)) no seu computador.
 
 # 3. Como usar
-## 3.1 Pré-requisitos
+### 3.1 Pré-requisitos
 
 - As dependências do projeto foram adicionadas ao build.grade:
 

@@ -3,26 +3,40 @@
  
 # Pior Filme Awards
 
-### Descrição: Aplicativo desenvolvido em kotlin para consumo de dados atraves de APi
+## Descrição: Aplicativo desenvolvido em kotlin para consumo de dados atraves de APi
 
-### Status do projeto: Em construcao
+## Status do projeto: Em construção
 
 # TABELA DE CONTEÚDO
 
-## 1. Sobre
-## 2. Tabela de Conteudo
-## 3. Instalação
-## 4. Como usar
-   ## 4.1 Pre-requisitos
-   ## 4.2 Arquivos locais
-## 5. Tecnologias
+## 1. Tabela de Conteudo
+## 2. Instalação
+## 3. Como usar
+   ## 3.1. Pre-requisitos
+## 4. Tecnologias
 
--------------------- INSTALAÇÃO -----------------
+## 2. Instalação
 
--------------------- COMO USAR -----------------
+- Instale o programa [Android Studio]([url](https://developer.android.com/studio?hl=pt-br&_gl=1*sz1gbq*_up*MQ..&gclid=CjwKCAjwxNW2BhAkEiwA24Cm9Bh_khqwnTH2tZ7AAylxEqtvt1ByRbdEnWz07iAhYglvlZt1nTyMlRoC5D0QAvD_BwE&gclsrc=aw.ds)) no seu computador.
 
--------------------- TESTS -----------------
+## 3. Como usar
+# 3.1 Pré-requisitos
 
--------------------- TECNOLOGIAS -----------------te está
+- No Android Studio, acesse File -> Settings -> Android SDK e instale a API 34:
+![image](https://github.com/user-attachments/assets/5f85fa6c-07ab-49ad-a26b-1097ef079247)
+
+- Vá até o menu de gradle e configure com o [gradle 8.1.1]([url](https://gradle.org/next-steps/?version=8.1.1&format=bin)) e o JDK 17. Clique em Apply e OK.
+![image](https://github.com/user-attachments/assets/0349babb-9f8a-48d3-8481-785cbbff7af4)
+
+- Vá até o menu de Project Structure e configure:
+  ![image](https://github.com/user-attachments/assets/9afc2ba9-d1e8-4090-bc80-0816889bf630)
+
+- Se tudo for feito corretamente, todas as dependências serão instaladas e poderá executar o projeto.
+
+- Crie um device virtual (PIXEL XL API 34):
+  ![image](https://github.com/user-attachments/assets/8bcba173-3eab-4a02-b82e-d5bfbab4b7b5)
+  ![image](https://github.com/user-attachments/assets/f37d7e47-b5d7-49fb-b377-ba2b673a9379)
+
+## 4. Tecnologias
 
 

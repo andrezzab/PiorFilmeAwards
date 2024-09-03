@@ -47,11 +47,11 @@
 
 # 4. Tecnologias
 
-###Fragments 
+### Fragments 
 
 Um Fragment representa uma parte reutilizável da IU do seu app. Um fragmento define e gerencia o próprio layout, tem o próprio ciclo de vida e pode processar os próprios eventos de entrada. Os fragmentos não podem existir sozinhos. Eles precisam ser hospedados por uma atividade ou por outro fragmento. A hierarquia de visualização do fragmento se torna parte da hierarquia de visualização do host ou é anexada a ela. [[^1](https://developer.android.com/guide/fragments?hl=pt-br)]
 
-###Retrofit 
+### Retrofit 
 
 Retrofit is the class through which your API interfaces are turned into callable objects. By default, Retrofit will give you sane defaults for your platform but it allows for customization. [[^2](https://square.github.io/retrofit/)
 

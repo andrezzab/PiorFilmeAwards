@@ -5,6 +5,8 @@
 
  Descrição: Aplicativo desenvolvido em kotlin para consumo de dados atraves de APi
 
+https://github.com/user-attachments/assets/452b4237-7a5d-406c-ac9e-ea75a5d19e60
+
  Status do projeto: Em construção
 
 ## TABELA DE CONTEÚDO

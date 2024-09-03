@@ -28,7 +28,7 @@
             android:textSize="18sp"
             android:layout_below="@+id/titulo_int"
             app:queryBackground="@android:color/transparent"
-            android:text="Top 3 studios with winners"
+            android:text="Producers with longest and shortest interval between wins"
             />
 
     </com.google.android.material.card.MaterialCardView>

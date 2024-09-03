@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.fragment.app.Fragment
 import br.com.outsera.piorfilmeawards.R
@@ -17,11 +18,12 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class IntervalFragment : Fragment() {
     private lateinit var interval: ArrayList<String>
+    private lateinit var anos: ArrayList<Int>
     private lateinit var list: ArrayList<String>
-    private lateinit var sublist: ArrayList<String>
     private lateinit var listview: ListView
     private lateinit var substitui: ArrayList<String>
     private lateinit var mudar: List<String>
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,12 +31,17 @@ class IntervalFragment : Fragment() {
     ): View {
         val contentView: View = inflater.inflate(R.layout.fragment_interval, container, false)
         listview = contentView.findViewById(R.id.listview_int)
+        anos = arrayListOf()
         list = arrayListOf()
-        sublist = arrayListOf()
         interval = ArrayList()
         substitui = arrayListOf()
-        var producers = ""
-        var ano = 0
+        var producers_max = ""
+        var producers_min = ""
+        var ano_max = 1
+        var ano_min = 1
+        var ano_maior = 0
+        var ano_menor = 0
+
         val retrofit: Retrofit =
             Retrofit.Builder().baseUrl("https://andrezzab.github.io/API-Filmes/")
                 .addConverterFactory(GsonConverterFactory.create()).build()
@@ -53,8 +60,7 @@ class IntervalFragment : Fragment() {
                                 val delimiter = ","
                                 mudar = str.split(delimiter)
                                 for (valor in mudar){
-                                    interval.add(valor)
-                                    mudar = arrayListOf("")
+                                    interval.add(valor.trim())
                                 }
                             }
                             else {
@@ -62,45 +68,38 @@ class IntervalFragment : Fragment() {
                             }
                         }
                     }
-                    println(interval.groupingBy{ it }
+                    for(autor in interval.groupingBy{ it }
                         .eachCount()
                         .toList()
-                        .sortedByDescending{ it.second }
-                        .take(interval.size))
-                    /*for (item in interval.groupingBy { it }
-                        .eachCount()
-                        .filter { it.value > 2 }) {
-                        list.add(item)
-                    }*/
-                    /*for (item in interval){
-                        if(item.contains(",")){
-                            substitui = item.split(",")
-                            list.add(substitui.toString())
-                            *//*  for (indice in substitui){
-                                  studios.add(indice)
-                              }*//*
+                        .filter { it.second > 1 }
+                        .take(interval.size)){
+                        substitui.add(autor.first)
+                    }
+                    for (i in substitui){
+                        for (data in response.body()!!){
+                            if (data.producers.contains(i) and (data.winner == "yes")){
+                                anos.add(data.year)
+                            }
                         }
-                    }*/
-
-
-                    /* for (item in interval.groupingBy { it }
-                         .eachCount()
-                         .toList()) {
-                         var year: String = item.first
-                         var count: String = item.second.toString()
-                         if (count.toInt()>1){
-                             list.add(year + " - " + count + " winners")
-                         }
-                     }
-                     val adapter2: ArrayAdapter<String> =
-                         ArrayAdapter<String>(activity!!, android.R.layout.simple_list_item_1, list)
-                     listview.setAdapter(adapter2)
-
-                     */
+                        ano_maior = anos.max()
+                        ano_menor = anos.min()
+                        var dif_wins = ano_maior-ano_menor
+                        if (dif_wins<=ano_min){
+                            producers_min = i
+                            ano_min = dif_wins
+                        }
+                        if (dif_wins>ano_max){
+                            producers_max = i
+                            ano_max = dif_wins
+                        }
+                        anos.clear()
+                    }
+                    list.add("Minimum: " + producers_min+" - "+ ano_min + " year(s)")
+                    list.add("Maximum: " + producers_max+" - "+ ano_max + " year(s)")
+                    val adapter1: ArrayAdapter<String> =
+                        ArrayAdapter<String>(activity!!, android.R.layout.simple_list_item_1, list)
+                    listview.setAdapter(adapter1)
                 }
-                println(interval) //[Allan Carr,1980, Frank Yablans,1981, Mitsuharu Ishii,1982, Robert R. Weston,1983, Bo Derek,1984, Buzz Feitshans,1985, Gloria Katz,1986, Bob Cavallo, Joe Ruffalo and Steve Fargnoli,1986, Bill Cosby,1987, Ted Field and Robert W. Cort,1988, Harve Bennett,1989, Steven Perry and Joel Silver,1990, Bo Derek,1990, Joel Silver,1991, Carol Baum and Howard Rosenman,1992, Sherry Lansing,1993, Buzz Feitshans and David Matalon,1994, Charles Evans and Alan Marshall,1995, Andrew Bergman and Mike Lobell,1996, Kevin Costner, Steve Tisch and Jim Wilson,1997, Ben Myron and Joe Eszterhas,1998, Jon Peters and Barry Sonnenfeld,1999, Jonathan D. Krane, Elie Samaha and John Travolta,2000, Larry Brezner, Howard Lapides and Lauren Lloyd,2001, Matthew Vaughn,2002, Martin Brest and Casey Silver,2003, Denise Di Novi and Edward McDonnell,2004, John Mallory Asher, BJ Davis, Rod Hamilton, Kimberley Kates, Michael Manasseri, Jenny McCarthy and Trent Walford,2005, Mario Kassar, Joel B. Michaels and Andrew G. Vajna,2006, Gary Barber, Michael DeLuca and Mike Myers,2008, Lorenzo di Bonaventura, Ian Bryce, Tom DeSanto and Don Murphy,2009, Frank Marshall, Kathleen Kennedy, Sam Mercer and M. Night Shyamalan,2010, Todd Garner, Jack Giarraputo and Adam Sandler,2011, Wyck Godfrey, Stephenie Meyer and Karen Rosenfelt,2012, Peter Farrelly, Ryan Kavanaugh, John Penotti and Charles B. Wessler,2013, Darren Doane, Raphi Henley, Amanda Rosser and David Shannon,2014, Simon Kinberg, Matthew Vaughn, Hutch Parker, Robert Kulzer and Gregory Goodman,2015, Michael De Luca, Dana Brunetti and E. L. James,2015, Gerald R. Molen,2016, Michelle Raimo Kouyate,2017]
-                println(list) //[[Allan Carr, 1980], [Frank Yablans, 1981], [Mitsuharu Ishii, 1982], [Robert R. Weston, 1983], [Bo Derek, 1984], [Buzz Feitshans, 1985], [Gloria Katz, 1986], [Bob Cavallo,  Joe Ruffalo and Steve Fargnoli, 1986], [Bill Cosby, 1987], [Ted Field and Robert W. Cort, 1988], [Harve Bennett, 1989], [Steven Perry and Joel Silver, 1990], [Bo Derek, 1990], [Joel Silver, 1991], [Carol Baum and Howard Rosenman, 1992], [Sherry Lansing, 1993], [Buzz Feitshans and David Matalon, 1994], [Charles Evans and Alan Marshall, 1995], [Andrew Bergman and Mike Lobell, 1996], [Kevin Costner,  Steve Tisch and Jim Wilson, 1997], [Ben Myron and Joe Eszterhas, 1998], [Jon Peters and Barry Sonnenfeld, 1999], [Jonathan D. Krane,  Elie Samaha and John Travolta, 2000], [Larry Brezner,  Howard Lapides and Lauren Lloyd, 2001], [Matthew Vaughn, 2002], [Martin Brest and Casey Silver, 2003], [Denise Di Novi and Edward McDonnell, 2004], [John Mallory Asher,  BJ Davis,  Rod Hamilton,  Kimberley Kates,  Michael Manasseri,  Jenny McCarthy and Trent Walford, 2005], [Mario Kassar,  Joel B. Michaels and Andrew G. Vajna, 2006], [Gary Barber,  Michael DeLuca and Mike Myers, 2008], [Lorenzo di Bonaventura,  Ian Bryce,  Tom DeSanto and Don Murphy, 2009], [Frank Marshall,  Kathleen Kennedy,  Sam Mercer and M. Night Shyamalan, 2010], [Todd Garner,  Jack Giarraputo and Adam Sandler, 2011], [Wyck Godfrey,  Stephenie Meyer and Karen Rosenfelt, 2012], [Peter Farrelly,  Ryan Kavanaugh,  John Penotti and Charles B. Wessler, 2013], [Darren Doane,  Raphi Henley,  Amanda Rosser and David Shannon, 2014], [Simon Kinberg,  Matthew Vaughn,  Hutch Parker,  Robert Kulzer and Gregory Goodman, 2015], [Michael De Luca,  Dana Brunetti and E. L. James, 2015], [Gerald R. Molen, 2016], [Michelle Raimo Kouyate, 2017]]
-
             }
 
             override fun onFailure(p0: Call<PropertyModel?>, p1: Throwable) {

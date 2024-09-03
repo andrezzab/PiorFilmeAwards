@@ -103,7 +103,7 @@ class IntervalFragment : Fragment() {
             }
 
             override fun onFailure(p0: Call<PropertyModel?>, p1: Throwable) {
-                TODO("Not yet implemented")
+                list.clear()
             }
         })
         return contentView

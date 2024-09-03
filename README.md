@@ -9,11 +9,11 @@
 
 # TABELA DE CONTEÚDO
 
-## 1. Tabela de Conteudo
-## 2. Instalação
-## 3. Como usar
-   ## 3.1. Pre-requisitos
-## 4. Tecnologias
+## 1. [Tabela de Conteudo]([url](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#tabela-de-conte%C3%BAdo))
+## 2. [Instalação]([url](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#2-instala%C3%A7%C3%A3o-1))
+## 3. [Como usar]([url](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#3-como-usar-1))
+   ## 3.1. [Pre-requisitos](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#31-pr%C3%A9-requisitos)
+## 4. [Tecnologias]([url](https://github.com/andrezzab/PiorFilmeAwards/blob/main/README.md#4-tecnologias-1))
 
 # 2. Instalação
 

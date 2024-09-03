@@ -25,9 +25,13 @@
 - As dependências do projeto foram adicionadas ao build.grade:
 
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
+
     implementation("com.squareup.moshi:moshi-kotlin:1.15.1")
+  
     implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
+  
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+  
     implementation("com.google.code.gson:gson:2.11.0")
 
 - No Android Studio, acesse File -> Settings -> Android SDK e instale a API 34:
@@ -42,6 +46,7 @@
 - Se tudo for feito corretamente, todas as dependências serão instaladas e poderá executar o projeto.
 
 - Crie um device virtual (PIXEL XL API 34):
+  
   ![image](https://github.com/user-attachments/assets/8bcba173-3eab-4a02-b82e-d5bfbab4b7b5)
   ![image](https://github.com/user-attachments/assets/f37d7e47-b5d7-49fb-b377-ba2b673a9379)
 
@@ -49,10 +54,10 @@
 
 ### Fragments 
 
-Um Fragment representa uma parte reutilizável da IU do seu app. Um fragmento define e gerencia o próprio layout, tem o próprio ciclo de vida e pode processar os próprios eventos de entrada. Os fragmentos não podem existir sozinhos. Eles precisam ser hospedados por uma atividade ou por outro fragmento. A hierarquia de visualização do fragmento se torna parte da hierarquia de visualização do host ou é anexada a ela. [[^1](https://developer.android.com/guide/fragments?hl=pt-br)]
+Um Fragment representa uma parte reutilizável da IU do seu app. Um fragmento define e gerencia o próprio layout, tem o próprio ciclo de vida e pode processar os próprios eventos de entrada. Os fragmentos não podem existir sozinhos. Eles precisam ser hospedados por uma atividade ou por outro fragmento. A hierarquia de visualização do fragmento se torna parte da hierarquia de visualização do host ou é anexada a ela. [[1](https://developer.android.com/guide/fragments?hl=pt-br)]
 
 ### Retrofit 
 
-Retrofit is the class through which your API interfaces are turned into callable objects. By default, Retrofit will give you sane defaults for your platform but it allows for customization. [[^2](https://square.github.io/retrofit/)
+Retrofit is the class through which your API interfaces are turned into callable objects. By default, Retrofit will give you sane defaults for your platform but it allows for customization. [[2](https://square.github.io/retrofit/)
 
 

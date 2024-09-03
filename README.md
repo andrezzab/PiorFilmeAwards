@@ -15,12 +15,12 @@
    ## 3.1. Pre-requisitos
 ## 4. Tecnologias
 
-## 2. Instalação
+# 2. Instalação
 
 - Instale o programa [Android Studio]([url](https://developer.android.com/studio?hl=pt-br&_gl=1*sz1gbq*_up*MQ..&gclid=CjwKCAjwxNW2BhAkEiwA24Cm9Bh_khqwnTH2tZ7AAylxEqtvt1ByRbdEnWz07iAhYglvlZt1nTyMlRoC5D0QAvD_BwE&gclsrc=aw.ds)) no seu computador.
 
-## 3. Como usar
-# 3.1 Pré-requisitos
+# 3. Como usar
+## 3.1 Pré-requisitos
 
 - No Android Studio, acesse File -> Settings -> Android SDK e instale a API 34:
 ![image](https://github.com/user-attachments/assets/5f85fa6c-07ab-49ad-a26b-1097ef079247)
@@ -37,6 +37,6 @@
   ![image](https://github.com/user-attachments/assets/8bcba173-3eab-4a02-b82e-d5bfbab4b7b5)
   ![image](https://github.com/user-attachments/assets/f37d7e47-b5d7-49fb-b377-ba2b673a9379)
 
-## 4. Tecnologias
+# 4. Tecnologias
 
 
